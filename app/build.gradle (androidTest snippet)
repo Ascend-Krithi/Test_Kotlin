@@ -1,0 +1,17 @@
+android {
+    defaultConfig {
+        testInstrumentationRunner "com.dsg.app.runner.TestRunner"
+        testInstrumentationRunnerArguments = [
+            username: "testuser",
+            password: "password123"
+        ]
+    }
+}
+
+dependencies {
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'io.cucumber:cucumber-android:7.0.0'
+    androidTestImplementation 'io.cucumber:cucumber-picocontainer:7.0.0'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+}
