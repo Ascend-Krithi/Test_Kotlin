@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId "com.dsg.app"
+        minSdkVersion 23
+        targetSdkVersion 34
+        testInstrumentationRunner "com.dsg.app.test.TestRunner"
+    }
+    buildTypes {
+        debug { testCoverageEnabled = true }
+        release { minifyEnabled false }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+    androidTestImplementation 'io.cucumber:cucumber-android:4.10.0'
+    androidTestImplementation 'io.cucumber:cucumber-picocontainer:4.10.0'
+    androidTestImplementation 'junit:junit:4.13.2'
+}
+
+testOptions {
+    execution 'ANDROIDX_TEST_ORCHESTRATOR'
+}
+
+android.defaultConfig.testInstrumentationRunnerArguments = [
+    'cucumberOptions': '--plugin pretty --plugin junit:reports/cucumber.xml --plugin html:reports'
+]
