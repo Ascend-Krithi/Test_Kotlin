@@ -1,0 +1,17 @@
+android {
+    defaultConfig {
+        testInstrumentationRunner "com.dsg.app.CucumberAndroidJUnitRunner"
+        testInstrumentationRunnerArguments = [
+            'username': 'testuser',
+            'password': 'testpass'
+        ]
+    }
+}
+
+dependencies {
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'io.cucumber:cucumber-android:7.11.2'
+    androidTestImplementation 'io.cucumber:cucumber-picocontainer:7.11.2'
+    androidTestImplementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
+}

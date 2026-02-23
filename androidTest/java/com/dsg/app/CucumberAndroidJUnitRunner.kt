@@ -1,0 +1,1 @@
+class CucumberAndroidJUnitRunner : io.cucumber.android.runner.CucumberAndroidJUnitRunner()
